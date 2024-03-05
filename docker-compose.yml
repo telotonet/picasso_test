@@ -7,7 +7,7 @@ services:
 
   celery:
     build:
-      context: ./core
+      context: .
     command: "celery --app=core worker -l INFO"
     volumes:
       - ./core:/usr/src/app/
@@ -18,7 +18,7 @@ services:
 
   django:
     build:
-      context: ./core
+      context: .
     command: "python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./core:/usr/src/app/
